@@ -1,10 +1,12 @@
 import java.util.Scanner;
 public class MahasiswaDemo03 {
     public static void main(String[] args) {
-
-        MahasiswaBerprestasi03 list = new MahasiswaBerprestasi03();
         Scanner sc = new Scanner (System.in);
-        int jumMhs = 5;
+
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumMhs = sc.nextInt();
+
+        MahasiswaBerprestasi03 list = new MahasiswaBerprestasi03(jumMhs);
         
         for (int i = 0; i < jumMhs; i++) {
             System.out.println("Masukkan Data Mahasiswa ke-" + (i+1));
@@ -24,7 +26,7 @@ public class MahasiswaDemo03 {
         
         list.selectionSort();
         list.tampil();
-        
+
         System.out.println("-----------------------------------------------------------");
         System.out.println("Pencarian data");
         System.out.println("-----------------------------------------------------------");
@@ -32,9 +34,9 @@ public class MahasiswaDemo03 {
         System.out.print("IPK: ");
         double cari = sc.nextDouble();
 
-        System.out.println("--------------------");
+        System.out.println("-----------------------------------------------------------");
         System.out.println("Menggunakan binary search");
-         System.out.println("--------------------");
+         System.out.println("-----------------------------------------------------------");
          double posisi2 = list.findBinarySearch(cari, 0, jumMhs-1);
         int pss2 = (int)posisi2;
         list.tampilPosisi(cari, pss2);
